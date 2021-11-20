@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DoctorVetMobileApp.ClientePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="Aquamarine">
+                <Label Text="DoctorVet Mobile APP - Mis Clientes" HorizontalTextAlignment="Center" TextColor="Black" FontSize="16"/>
+            </Frame>
+            <ListView x:Name="clienteListView" HasUnevenRows="False" RowHeight="80" SeparatorColor="Purple" SeparatorVisibility="Default" ItemSelected="clienteListView_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="5" VerticalOptions="Center">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label x:Name="lblNombre" FontSize="20" Text="{Binding nombres}" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="End"/>
+                                    <Label x:Name="lblApellido" FontSize="20" Text="{Binding apellidos}" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Start"/>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="btnPost" Text="Insertar" Clicked="btnPost_Clicked"/>
+            <Button x:Name="btnPut" Text="Actualizar" Clicked="btnPut_Clicked"/>
+            <Button x:Name="btnEliminar" Text="Eliminar" Clicked="btnEliminar_Clicked"/>
+            <Button x:Name="btnSalir" Text="Salir" Clicked="btnSalir_Clicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
